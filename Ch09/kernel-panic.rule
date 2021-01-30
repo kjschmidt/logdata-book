@@ -1,0 +1,5 @@
+type=Single
+ptype=RegExp
+pattern=panic
+desc=$0
+action= write – A potential kernel panic has occurred
