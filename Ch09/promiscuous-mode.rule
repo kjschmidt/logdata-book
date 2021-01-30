@@ -1,3 +1,7 @@
+# When a network interface is placed into promiscuous mode, all packets are sent to the kernel for processing, 
+# including packets not destined for the MAC address of the network interface card. The one main reason that 
+# this is a bad thing is because users on the system with a promiscuous mode network interface can now use a 
+# tool like a sniffer to view any and all network packets. Let’s look at how to detect an interface going into promiscuous mode on Linux:
 type=Single
 ptype=RegExp
 pattern=^.*(\d+\.\d+\.\d+\.\d+).* (.*?) entered promiscuous mode$
