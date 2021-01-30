@@ -1,0 +1,5 @@
+type=Single
+ptype=RegExp
+pattern=^.*(\d+\.\d+\.\d+\.\d+).* (.*?) entered promiscuous mode$
+desc=$0
+action= write – Interface $2 on $1 entered promiscuous mode
