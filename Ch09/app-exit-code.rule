@@ -1,0 +1,9 @@
+# When applications exit, they generally return an error code to the operating system. 
+# This code is generally zero (0) for normal program termination. An exit status of one (1) 
+# is generally used to denote some sort of an abnormal operation has occurred which caused the 
+# application to terminate abruptly. The following SEC rule will detect such error codes
+type=Single
+ptype=RegExp
+pattern=exit status (\d+)
+desc=$0
+action= write – An application exited with a status of $1
