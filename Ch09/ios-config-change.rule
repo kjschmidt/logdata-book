@@ -1,0 +1,5 @@
+type=Single
+ptype=RegExp
+pattern=%SYS-\d+-CONFIG
+desc=$0
+action= write – A configuration change has occurred!
