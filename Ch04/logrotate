@@ -1,0 +1,9 @@
+# sample logrotate configuration file
+ compress
+ /var/log/messages {
+   rotate 5
+   weekly
+   postrotate
+    /sbin/killall -HUP syslogd
+   endscript
+ }
