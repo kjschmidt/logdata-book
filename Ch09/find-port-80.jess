@@ -1,0 +1,9 @@
+(defrule find-port-80
+
+?event1 <- (event (dstport 80))
+
+=>
+
+(printout t “Found an event with dst port of 80: ” (fact-slot-value ?event1 type) crlf)
+
+(retract ?event1))
