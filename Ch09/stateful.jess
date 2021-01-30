@@ -1,0 +1,11 @@
+(defrule find-portscan-followed-by-reject
+
+?event1 <- (event (type portscan) (srcip ?sip))
+
+?event2 <- (event (type reject) (srcip ?sip))
+
+=>
+
+(printout t “Portscan followed by Firewall Reject from: ?sip” crlf)
+
+(retract ?event1 ?event2))
