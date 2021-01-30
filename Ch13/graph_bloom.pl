@@ -4,9 +4,11 @@
 # Author: Jimmy Alderson
 #
 use GraphViz::Small;
+
 my%dst_hash = ();
 my%edge_hash = ();
 my $g = GraphViz::Small->new(layout => ‘neato’, bgcolor => ‘black’);
+
 while ($line = <STDIN>){
  chomp($line);
  undef($sip);
