@@ -1,5 +1,10 @@
-type=Single
+type=SingleWithScript
 ptype=RegExp
-pattern=%SYS-\d+-CONFIG
+pattern=^.* (\d+\.\d+\.\d+\d+) .*%SYS-\d+-CONFIG: .* from (.*?)$
+# We now extract the host from which the configuration attempt was made. 
+# We then pass this to the isItMaintTime.pl script. The goal is to look up 
+# (maybe in a database) to see if the router in question is scheduled to be configured during the current maintenance period.
+script=./isItMaintTime.pl $1
 desc=$0
-action= write – A configuration change has occurred!
+action=write – $1 Configured during non-maintenance period from $2!
+action2=write – $1 Configured during maintenance period from $2!
