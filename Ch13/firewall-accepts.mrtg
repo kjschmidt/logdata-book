@@ -1,0 +1,16 @@
+Target[fw.accepts]: ‘/usr/bin/perl /usr/local/bin/accepts.pl’
+
+MaxBytes[fw.accepts]: 512
+
+Options[fw.accepts]: gauge
+
+Title[fw.accepts]: Number of firewall accepts
+
+YLegend[fw.accepts]: FW Accepts
+
+PageTop[fw.accepts]: <H1>FW Accepts </H1>
+
+<TABLE>
+  <TR><TD>System:</TD> <TD>My Firewall</TD></TR>
+  <TR><TD>Maintainer:</TD> <TD>“”</TD></TR>
+</TABLE>
