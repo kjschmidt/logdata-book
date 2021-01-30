@@ -1,0 +1,1 @@
+my($a,$b,$c,$type,$class,$priority,$proto,$srcip,$srcport,$dstip,$dstport) = $message =∼ /\[(.*?):(.*?):(.*?)\] (.*?)\[Classification: (.*?)\]\[Priority: (.*?)\]: {(.*?)} (.*?):(.*?) -> (.*?):(.*?)$/;
