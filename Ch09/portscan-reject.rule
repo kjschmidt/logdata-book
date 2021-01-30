@@ -1,0 +1,22 @@
+#
+# Rule 1: Catch a portscan from source IP address to destination IP
+# address. It will then create a dynamic context based on whatever the
+# source and destination IP addresses are.
+#
+type=Single
+ptype=RegExp
+pattern=portscan (\d+\.\d+\.\d+\.\d+) -> (\d+\.\d+\.\d+\.\d+)
+desc=$0
+action= create PORTSCAN_$1_$2;
+#
+# Rule 2: Catch a firewall reject from source IP address to destination IP
+# address. If the portscan context already exists, we have a situation
+# where an attacker is portscanning AND getting a reject from a firewall, all
+# from the same source IP address to the same destination IP address.
+#
+type=Single
+ptype=RegExp
+pattern=reject (\d+\.\d+\.\d+\.\d+) -> (\d+\.\d+\.\d+\.\d+)
+context=PORTSCAN_$1_$2
+desc=$0
+action= write - Portscan and firewall reject from $1 to $2;
