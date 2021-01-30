@@ -1,0 +1,5 @@
+type=Single
+ptype=RegExp
+pattern=fatal
+desc=$0
+action= write – A fatal error may have occurred
