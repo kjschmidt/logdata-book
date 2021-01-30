@@ -1,0 +1,1 @@
+select * from pattern [every LoginFailure -> (timer:interval(10 sec) having count(*) >= 5 and LoginSuccess)]
